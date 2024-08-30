@@ -1,4 +1,4 @@
-package org.example.Products;
+package Products;
 
 public class Beverage extends Product {
 

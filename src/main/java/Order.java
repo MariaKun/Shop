@@ -1,6 +1,4 @@
-package org.example;
-
-import org.example.Products.Product;
+import Products.Product;
 
 import java.util.Map;
 import java.util.UUID;

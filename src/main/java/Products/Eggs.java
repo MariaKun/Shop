@@ -1,4 +1,4 @@
-package org.example.Products;
+package Products;
 
 import java.awt.*;
 

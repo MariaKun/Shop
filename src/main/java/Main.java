@@ -1,8 +1,6 @@
-package org.example;
-
-import org.example.Products.Eggs;
-import org.example.Products.MineralWater;
-import org.example.Products.Product;
+import Products.Eggs;
+import Products.MineralWater;
+import Products.Product;
 
 import java.util.*;
 import java.awt.*;

@@ -1,6 +1,7 @@
 import Products.Product;
 
 import java.util.Map;
+import java.util.UUID;
 
 //Single Responsibility Principle
 public class Shop {
@@ -11,8 +12,8 @@ public class Shop {
         return products;
     }
 
-    public Product findProduct(int id) {
-        return products.entrySet().stream().filter(x -> x.getKey().getId() == id)
+    public Product findProduct(UUID id) {
+        return products.entrySet().stream().filter(x -> x.getKey().getId().equals(id))
                 .map(Map.Entry::getKey)
                 .findFirst().get();
     }
@@ -31,5 +32,10 @@ public class Shop {
 
     public Shop(Map<Product, Integer> products) {
         this.products = products;
+    }
+
+    public void printCatalog() {
+        System.out.println("Список товаров:");
+        products.forEach((key, value) -> System.out.println(key + ", Количество = " + value));
     }
 }

@@ -28,4 +28,15 @@ public class Customer {
                 .filter(x -> x.getId().equals(id))
                 .findFirst().get();
     }
+
+    public boolean printOrders() {
+        System.out.println("Мои заказы:");
+        if (!orders.isEmpty()) {
+            orders.forEach(System.out::println);
+            return true;
+        } else {
+            System.out.println("Заказов нет");
+            return false;
+        }
+    }
 }

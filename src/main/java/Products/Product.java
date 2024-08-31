@@ -2,6 +2,7 @@ package Products;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 //Dependency inversion principle - в программе работаем не с конретными продуктами, а с абстракцией
 //Open-closed principle
@@ -10,10 +11,10 @@ public abstract class Product {
     private int rate;
     private String manufacturer;
     private String name;
-    private int id;
+    private UUID id;
     private List<String> keyWords = new ArrayList<>();
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -41,8 +42,8 @@ public abstract class Product {
         this.keyWords.add(keyWord);
     }
 
-    public Product(int id, String name, String manufacturer, int price) {
-        this.id = id;
+    public Product(String name, String manufacturer, int price) {
+        this.id = UUID.randomUUID();
         this.price = price;
         this.manufacturer = manufacturer;
         this.name = name;
@@ -50,11 +51,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return
-                "price=" + price +
-                        ", rate=" + rate +
-                        ", keyWords=" + keyWords +
-                        ", manufacturer='" + manufacturer + '\'' +
-                        ", name='" + name + '\'';
+        return "ID = " + id + ", Название = " + name + ", Цена = " + price;
     }
 }

@@ -30,10 +30,16 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "cart=" + cart +
-                ", address='" + address + '\'' +
-                ", id=" + id +
-                '}';
+        StringBuilder str = new StringBuilder();
+        int sum = 0;
+        for (Map.Entry<Product, Integer> entry : cart.entrySet()) {
+            str.append(entry.getKey().toString() + " Количество = " + entry.getValue());
+            sum = sum + entry.getKey().getPrice() * entry.getValue();
+        }
+
+        return "ID = " + id +
+                ", \nТовары = " + str +
+                ", \nадрес = " + address +
+                ", \nсумма = " + sum;
     }
 }

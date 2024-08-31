@@ -1,3 +1,6 @@
+import Notification.EmailNotification;
+import Notification.MobileNotification;
+import Notification.NotificationService;
 import Products.Eggs;
 import Products.MineralWater;
 import Products.Product;
@@ -110,7 +113,24 @@ public class Main {
             String address = scanner.nextLine();
             Order order = new Order(cart, address);
             customer.addOrder(order);
-            System.out.println("Заказ готов!");
+            System.out.println("Заказ собран!");
+
+            System.out.println("Отправить подтверждение заказа по" +
+                    "\n1. email" +
+                    "\n2. sms");
+            String num = scanner.nextLine();
+            switch (Integer.parseInt(num)) {
+                case (1):
+                    NotificationService emailNotification = new EmailNotification();
+                    emailNotification.sendMessage(order.getId().toString());
+                    break;
+                case (2):
+                    NotificationService mobileNotification = new MobileNotification();
+                    mobileNotification.sendMessage(order.getId().toString());
+                    break;
+                default:
+                    break;
+            }
         } else {
             System.out.println("Заказ не был собран, корзина пустая");
         }

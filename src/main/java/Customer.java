@@ -6,6 +6,24 @@ import java.util.UUID;
 public class Customer {
     private List<Order> orders = new ArrayList<>();
     private String name;
+    private String email;
+    private String mobile;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
 
     public Customer(String name) {
         this.name = name;

@@ -37,7 +37,7 @@ public class Order {
             sum = sum + entry.getKey().getPrice() * entry.getValue();
         }
 
-        return "ID = " + id +
+        return "\nID = " + id +
                 ", \nТовары = " + str +
                 ", \nадрес = " + address +
                 ", \nсумма = " + sum;

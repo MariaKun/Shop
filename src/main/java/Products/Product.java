@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.UUID;
 
 //Dependency inversion principle - в программе работаем не с конретными продуктами, а с абстракцией
-//Open-closed principle
 public abstract class Product {
     private int price;
     private int rate;
